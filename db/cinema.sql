@@ -20,5 +20,5 @@ CREATE TABLE tickets (
   film_id INT4 REFERENCES films(id) ON DELETE CASCADE
 );
 
-INNER JOIN tickets ON customers.id = tickets.customer_id
-INNER JOIN tickets ON films.id = tickets.film_id;
+-- INNER JOIN tickets ON customers.id = tickets.customer_id
+-- INNER JOIN tickets ON films.id = tickets.film_id;
