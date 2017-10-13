@@ -7,13 +7,13 @@ require("pry")
 customer_1 = Customer.new({
   "name" => "Lou Carpenter",
   "funds" => 11})
-
+customer_1.save
 
 customer_2 = Customer.new({
   "name" => "Helen Daniels",
   "funds" => 100})
+customer_2.save
 
-  
 
   binding.pry
   nil

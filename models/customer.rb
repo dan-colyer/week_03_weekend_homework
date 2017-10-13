@@ -9,17 +9,13 @@ class Customer
     @name = options["name"]
     @funds = options["funds"]
   end
-end
 
-# require_relative("../db/sql_runner")
-# require_relative("location.rb")
-#
-# class User
-#
-#   attr_reader :id
-#   attr_accessor :name
-#
-#   def initialize( options )
-#     @id = options['id'].to_i
-#     @name = options['name']
-#   end
+  def save()
+    sql = "INSERT INTO customers (name, funds)
+          VALUES ($1, $2)
+          RETURNING id"
+    values = [@name, @funds]
+    customer = SqlRunner.run(sql, values).first
+    @id = customer["id"].to_i
+  end
+end
