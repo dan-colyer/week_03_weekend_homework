@@ -49,14 +49,3 @@ class Customer
     return film
   end
 end
-#
-# def locations()
-#   sql = "SELECT locations.* FROM locations
-#         INNER JOIN visits
-#         ON locations.id = visits.location_id
-#         WHERE user_id = $1"
-#   values = [@id]
-#   results = SqlRunner.run(sql, values)
-#   locations = results.map {|location| Location.new(location)}
-#   return locations
-# end
