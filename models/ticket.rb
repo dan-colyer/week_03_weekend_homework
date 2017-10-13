@@ -27,4 +27,12 @@ class Ticket
     SqlRunner.run(sql, values)
   end
 
+  def self.all()
+    sql = "SELECT * FROM tickets"
+    values = []
+    tickets = SqlRunner.run(sql, values)
+    ticket = tickets.map {|ticket| Ticket.new(ticket)}
+    return ticket
+  end
+
 end
