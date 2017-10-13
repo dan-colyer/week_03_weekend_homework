@@ -20,12 +20,13 @@ film_1 = Film.new({
   "title" => "Fountain",
   "price" => 10
   })
+film_1.save()
 
 film_2 = Film.new({
   "title" => "McCalkin",
   "price" => 10
   })
-
+film_2.save()
 
   binding.pry
   nil
