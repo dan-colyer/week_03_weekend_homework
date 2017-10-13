@@ -5,6 +5,7 @@ require_relative("../models/ticket.rb")
 require("pry")
 
 Customer.delete_all()
+Film.delete_all()
 
 customer_1 = Customer.new({
   "name" => "Lou Carpenter",
