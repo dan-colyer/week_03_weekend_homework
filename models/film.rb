@@ -53,4 +53,17 @@ class Film
     return customer.length
   end
 
+  def show_times()
+    sql = "SELECT screenings.* from screenings
+          LEFT JOIN films ON screenings.film_id = films.id
+          WHERE film_id = $1"
+    values = [@id]
+    show_times = SqlRunner.run(sql, values)
+    show_time = show_times.map {|show_time| Screening.new(show_time)}
+    return show_time
+  end
+
 end
+
+# SELECT jedi.*, lightsabers.* FROM jedi
+# RIGHT JOIN lightsabers ON jedi.id = lightsabers.owner_id;
