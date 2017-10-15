@@ -18,6 +18,11 @@ customer_2 = Customer.new({
   "funds" => 100})
 customer_2.save()
 
+customer_3 = Customer.new({
+  "name" => "Madge Bishop",
+  "funds" => 11})
+
+
 film_1 = Film.new({
   "title" => "Fountain",
   "price" => 10
@@ -50,29 +55,3 @@ ticket_3.save()
 
   binding.pry
   nil
-
-#
-# Visit.delete_all()
-# Location.delete_all()
-# User.delete_all()
-
-# location1 = Location.new({ 'category' => 'Attractions', 'name' => 'Mordor'})
-# location1.save()
-# location2 = Location.new({ 'category' => 'Places To Go', 'name' => 'Hobbiton'})
-# location2.save()
-#
-# visit1 = Visit.new({ 'user_id' => user1.id, 'location_id' => location1.id, 'review' => '0 stars, far too hot'})
-# visit1.save()
-# visit2 = Visit.new({ 'user_id' => user2.id, 'location_id' => location1.id, 'review' => '5 stars, would visit again if I could'})
-# visit2.save()
-# visit3 = Visit.new({ 'user_id' => user1.id, 'location_id' => location2.id, 'review' => '4 stars, plenty of beer available'})
-# visit3.save()
-#
-# binding.pry
-# nil
-
-# Your app should be able to:
-#
-#     Create customers, films and tickets
-#     CRUD actions (create, read, update, delete) customers, films and tickets.
-#     Show which films a customer has booked to see, and see which customers are coming to see one film.

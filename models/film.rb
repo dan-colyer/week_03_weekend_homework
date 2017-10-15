@@ -43,4 +43,14 @@ class Film
     return customer
   end
 
+  def customer_count()
+    sql = "SELECT customers.* from customers
+          INNER JOIN tickets ON customers.id = tickets.customer_id
+          WHERE film_id = $1"
+    values = [@id]
+    customers = SqlRunner.run(sql, values)
+    customer = customers.map {|customer| Customer.new(customer)}
+    return customer.length
+  end
+
 end
